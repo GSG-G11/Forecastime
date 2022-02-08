@@ -9,7 +9,7 @@ searchBtn.addEventListener('click' , (event)=>{
     let city = searchInput.value;
     let continent = continents.value;
     if(city){
-        let url = `http://worldtimeapi.org/api/timezone/${continent}/${city}`
+        let url = `https://worldtimeapi.org/api/timezone/${continent}/${city}`
         fetch(url , (data)=>{updateWeatherDom(timeZoon,data)});
     }
     else{
@@ -32,7 +32,7 @@ function fetch(url, cb) {
     xhr.open("GET", url, true);
     xhr.send();
 }
-let url = 'http://worldtimeapi.org/api/timezone/Asia/Gaza';
+let url = 'https://worldtimeapi.org/api/timezone/Asia/Gaza';
 fetch(url,(data)=>{updateWeatherDom(timeZoon,data)})
 
 function getDate(str){
