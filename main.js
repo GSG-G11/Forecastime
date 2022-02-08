@@ -4,13 +4,20 @@ const searchInput = document.querySelector('.search-input');
 const searchBtn = document.querySelector('#search-btn');
 const continents = document.querySelector('#continents');
 
+
+
+
 searchBtn.addEventListener('click' , (event)=>{
     event.preventDefault();
     let city = searchInput.value;
     let continent = continents.value;
     if(city){
-        let url = `https://worldtimeapi.org/api/timezone/${continent}/${city}`
-        fetch(url , (data)=>{updateWeatherDom(timeZoon,data)});
+        let url = `https://worldtimeapi.org/api/timezone/${continent}/${city}`;
+        let url2 = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=40a49d0dc4473613c25717d66db17c09`
+
+
+        fetch(url , (data)=>{updateTimeDom(timeZoon,data)});
+        fetch(url2 , (data)=>{updateWeatherDom(cityWeather,data)});
     }
     else{
         alert('Please enter city name')
@@ -32,8 +39,7 @@ function fetch(url, cb) {
     xhr.open("GET", url, true);
     xhr.send();
 }
-let url = 'https://worldtimeapi.org/api/timezone/Asia/Gaza';
-fetch(url,(data)=>{updateWeatherDom(timeZoon,data)})
+
 
 function getDate(str){
     let data = str.split('T');
@@ -46,11 +52,30 @@ function getTime(str){
     let time = str.split('.')[0];
     return time
 }
-function updateWeatherDom(html,data){
+function updateTimeDom(html,data){
     let date = getDate(data.datetime);
     html.innerHTML = `${date.time} , ${date.date}`
+    
+}
+function updateWeatherDom(html , data){
+    let temp = Math.floor(gettemp(data)-273.15);
+    let status = getWeatherStatus(data);
+    html.innerHTML =`${temp} °C  , ${status}`;
+    
+   
 }
 function faild(time , weather){
     time.innerHTML = `sorry city not found`
     weather.innerHTML = `sorry city not found`
+}
+
+
+function gettemp(obj){
+    return obj.main.temp
+}
+
+
+const getWeatherStatus = (obj)=>{
+    let tempWether =obj.weather[0];
+    return tempWether.main;
 }
