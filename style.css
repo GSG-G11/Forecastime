@@ -5,11 +5,13 @@ body{
     background-size: cover;
     font-family: "Dongle", sans-serif;
     box-sizing: border-box;
+    color: white;
+    height: 100vh;
 }
 .container {
     position: absolute;
     left: 15%;
-    top: 10%;
+    top: 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,27 +30,50 @@ h1 {
     transform: translateY(-50px);
   }
 }
+.choose {
+    display: flex;
+    margin-bottom: 30px;
+    font-size: 30px;
+    justify-content: space-around;
+    width: 400px;
+}
+.choose select{
+    border: none;
+    outline: none;
+    padding: 0 20px;
+    background-color: #cdcaca54;
+    font-family: "Dongle", sans-serif;
+    font-size: 30px;
+    color: white;
+}
+option{
+    color: black;
+}
 .search {
     background-color: #cdcaca54;
     width: 405px;
     height: 30px;
     border-radius: 20px;
     position: relative;
-    padding: 5px;
+    padding:5px 15px;
+    overflow: hidden;
 }
 .search input {
+    font-family: "Dongle", sans-serif;
     position: absolute;
-    top: 10px;
+   
     border: none;
     background-color: transparent;
-    color: #000;
+    color: white;
     outline: transparent;
+    font-size: 1.6rem;
 
 }
 .search i {
     position: absolute;
     right: 15px;
     top: 10px;
+    cursor: pointer;
    
 }
 .card {
