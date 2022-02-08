@@ -12,8 +12,9 @@ searchBtn.addEventListener('click' , (event)=>{
     let city = searchInput.value;
     let continent = continents.value;
     if(city){
-        let url = `https://worldtimeapi.org/api/timezone/${continent}/${city}`;
-        let url2 = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=40a49d0dc4473613c25717d66db17c09`
+       
+       // let url = `https://worldtimeapi.org/api/timezone/${continent}/${city}`;
+       // let url2 = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=40a49d0dc4473613c25717d66db17c09`
 
 
         fetch(url , (data)=>{updateTimeDom(timeZoon,data)});
