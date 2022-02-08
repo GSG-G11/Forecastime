@@ -7,6 +7,8 @@ body{
     box-sizing: border-box;
     color: white;
     height: 100vh;
+   
+   
 }
 .container {
     position: absolute;
@@ -15,6 +17,8 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    
 }
 h1 {
     font-family: 'Quintessential', cursive;
@@ -95,4 +99,40 @@ option{
 }
 .card .time i  , .card .weather i {
     margin-right: 10px;
+}
+
+
+@media(max-width : 600px){
+    .container{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        top: 0; left: 0;
+        max-width: 100%;
+        position: static;
+        padding: 0;
+        height: 100vh;
+        
+    }
+    
+}
+@media(max-width : 400px){
+    .container{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        top: 0; left: 0;
+        
+        position: static;
+        padding: 0;
+        height: 100vh;
+        
+    }
+    .container .choose , .search , .card {
+        width: 250px;
+        font-size: 20px;
+    }
+    .card{
+        margin-top: 15px;
+    }
 }
