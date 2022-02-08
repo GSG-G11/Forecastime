@@ -132,7 +132,8 @@ option{
         width: 250px;
         font-size: 20px;
     }
-    .card{
+    .card p{
         margin-top: 15px;
+        font-size: 20px;
     }
 }
