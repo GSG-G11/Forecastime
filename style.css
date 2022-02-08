@@ -1,0 +1,73 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(cover.jpg);
+    background-size: cover;
+    font-family: "Dongle", sans-serif;
+    box-sizing: border-box;
+}
+.container {
+    position: absolute;
+    left: 15%;
+    top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1 {
+    font-family: 'Quintessential', cursive;
+    font-size: 60px;
+    word-spacing: 2px;
+    animation: animations 1s ease-in ;
+    text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+
+}
+
+@keyframes animations {
+  0% {
+    transform: translateY(-50px);
+  }
+}
+.search {
+    background-color: #cdcaca54;
+    width: 405px;
+    height: 30px;
+    border-radius: 20px;
+    position: relative;
+    padding: 5px;
+}
+.search input {
+    position: absolute;
+    top: 10px;
+    border: none;
+    background-color: transparent;
+    color: #000;
+    outline: transparent;
+
+}
+.search i {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+   
+}
+.card {
+    background-color:#cdcaca54 ;
+    width: 400px;
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 5px;
+   
+}
+.card .time , .card .weather{
+
+    display: flex;
+    align-items: center;
+    
+}
+.card p {
+    font-size: 30px;
+}
+.card .time i  , .card .weather i {
+    margin-right: 10px;
+}
