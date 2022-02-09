@@ -9,6 +9,7 @@ body{
     height: 100vh;
    
    
+   
 }
 .container {
     position: absolute;
@@ -107,22 +108,29 @@ option{
         justify-content: center;
         align-items: center;
         display: flex;
-        top: 0; left: 0;
-        max-width: 100%;
+        flex-direction: column;
+       
+        width: 400px;
         position: static;
-        padding: 0;
+       
         height: 100vh;
         
     }
+    .container .choose , .search , .card {
+        width: 300px;
+        font-size: 20px;
+    }
+    .card p{
+        margin-top: 15px;
+        font-size: 20px;
+    }
     
 }
-@media(max-width : 400px){
+@media(max-width : 300px){
     .container{
         justify-content: center;
         align-items: center;
         display: flex;
-        top: 0; left: 0;
-        
         position: static;
         padding: 0;
         height: 100vh;
