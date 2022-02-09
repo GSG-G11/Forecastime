@@ -1,4 +1,4 @@
-let { getWeatherIcon, getWeatherStatus, gettemp } = require('./logic.js');
+let { getWeatherIcon, getWeatherStatus, gettemp , getTime , getDate} = require('./logic.js');
 
 
 let weatherData1 = {
@@ -31,7 +31,7 @@ let weatherData3 = {
         "temp": 310.34,
     },
 }
-describe('test the logic wither functions', () => {
+describe('test the logic weather functions', () => {
     // ---------------- Weather Icon ----------------- //
     test('test getWeatherIcon case 1', () => {
         expect(getWeatherIcon(weatherData1)).toBe("01d");
@@ -62,6 +62,23 @@ describe('test the logic wither functions', () => {
     test('test gettemp case 3', () => {
         expect(gettemp(weatherData3)).toBe(310.34);
     });
+});
+
+
+// ------------------------- Time --------------------------------- //
+
+
+describe('test the logic Time functions', () => {
+    test('test getDate case 1', () => {
+        expect(getDate("2022-02-09T11:45:50.055472+02:00")).toEqual({date: '2022-02-09', time: '11:45:50'});
+    });
+    test('test getDate case 2', () => {
+        expect(getDate("2022-02-09T09:59:03.208962+00:00")).toEqual({date: '2022-02-09', time: '09:59:03'});
+    });
+    test('test getDate case 3', () => {
+        expect(getDate("2022-02-09T14:00:59.505075+04:00")).toEqual({date: '2022-02-09', time: '14:00:59'});
+    });
+
 });
 
 
