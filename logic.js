@@ -22,4 +22,4 @@ const getWeatherIcon = (obj) => {
     let tempWether = obj.weather[0];
     return tempWether.icon;
 }
-module.exports = {getWeatherIcon ,getWeatherStatus , gettemp};
+module.exports = {getWeatherIcon ,getWeatherStatus , gettemp , getTime , getDate};
