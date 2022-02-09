@@ -41,17 +41,6 @@ function fetch(url, cb) {
     xhr.send();
 }
 
-
-// function getDate(str) {
-//     let data = str.split('T');
-//     let time = getTime(data[1]);
-//     let date = data[0];
-//     return { date, time };
-// }
-// function getTime(str) {
-//     let time = str.split('.')[0];
-//     return time
-// }
 function updateTimeDom(html, data) {
     let date = getDate(data.datetime);
     html.innerHTML = `${date.time} , ${date.date}`
@@ -68,17 +57,3 @@ function faild(time, weather) {
     time.innerHTML = `sorry city not found`
     weather.innerHTML = `sorry city not found`
 }
-
-// function gettemp(obj) {
-//     return obj.main.temp
-// }
-
-// const getWeatherStatus = (obj) => {
-//     let tempWether = obj.weather[0];
-//     return tempWether.main;
-// }
-
-// const getWeatherIcon = (obj) => {
-//     let tempWether = obj.weather[0];
-//     return tempWether.icon;
-// }
